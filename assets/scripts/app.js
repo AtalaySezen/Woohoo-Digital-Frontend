@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.appendChild(mobileNavigation);
 
   const menuWrapper = createMenuWrapper();
-  mobileNavigation.querySelector(".navigation-menu").appendChild(menuWrapper);
+  mobileNavigation
+    .querySelector(".mobile-navigation-menu")
+    .appendChild(menuWrapper);
 
   const dropdowns = document.querySelectorAll(".dropdown");
   const mobileOverlay = createMobileOverlay();
@@ -35,14 +37,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function createMobileNavigation() {
   const mobileNavigation = document.createElement("div");
-  mobileNavigation.classList.add("mobile-navigation");
-  mobileNavigation.innerHTML = '<div class="navigation-menu"></div>';
+  mobileNavigation.classList.add("mobile-menu");
+  mobileNavigation.innerHTML = '<div class="mobile-navigation-menu"></div>';
   return mobileNavigation;
 }
 
 function getTouchLinks() {
   return document.querySelectorAll(
-    ".header .navigation-menu .nav > ul > li.accordion > a, .header .navigation-menu .nav > ul > li.mobile-menu > a"
+    ".header .mobile-navigation-menu .nav > ul > li > a, .header .mobile-navigation-menu .nav > ul > li.mobile-menu > a"
   );
 }
 
@@ -52,12 +54,13 @@ function preventDefault(event) {
 
 function createMenuWrapper() {
   const menuWrapper = document.createElement("div");
-  menuWrapper.classList.add("menu-wrapper");
+  menuWrapper.classList.add("navbar-mobile");
   menuWrapper.innerHTML = `
       <button class="btn-menu" type="button">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1.41421" y="20" width="26" height="2" rx="1" transform="rotate(-45 1.41421 20)" fill="white" stroke="white" stroke-width="2"/>
+      <rect x="3" y="1.41421" width="26" height="2" rx="1" transform="rotate(45 3 1.41421)" fill="white" stroke="white" stroke-width="2"/>
+      </svg>
       </button>
       <nav class="nav-links">
         <ul>
@@ -170,28 +173,26 @@ function toggleDropdown(dropdown) {
 
 function toggleMobileNavigation(siteViewport) {
   const duration = 400;
-  if (!document.documentElement.classList.contains("mobile-animating")) {
-    if (
-      document.documentElement.classList.contains("mobile-navigation-active")
-    ) {
-      document.documentElement.classList.add("mobile-animating");
-      document.documentElement.classList.remove("mobile-navigation-active");
+  if (!document.documentElement.classList.contains("mobile-nav-animation")) {
+    if (document.documentElement.classList.contains("mobile-nav-open")) {
+      document.documentElement.classList.add("mobile-nav-animation");
+      document.documentElement.classList.remove("mobile-nav-open");
       setTimeout(() => {
         document.documentElement.classList.remove(
           "mobile-animation-ready",
-          "mobile-animating"
+          "mobile-nav-animation"
         );
         siteViewport.removeAttribute("style");
       }, duration);
     } else {
       document.documentElement.classList.add(
         "mobile-animation-ready",
-        "mobile-animating"
+        "mobile-nav-animation"
       );
       setTimeout(() => {
-        document.documentElement.classList.add("mobile-navigation-active");
+        document.documentElement.classList.add("mobile-nav-open");
         setTimeout(() => {
-          document.documentElement.classList.remove("mobile-animating");
+          document.documentElement.classList.remove("mobile-nav-animation");
         }, duration);
       }, 30);
     }
@@ -241,4 +242,3 @@ var swiperProduct = new Swiper(".mySwiperProduct", {
     },
   },
 });
-
