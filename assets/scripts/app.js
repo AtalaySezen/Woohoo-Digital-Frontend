@@ -208,6 +208,17 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
+const mySwiperBlog = new Swiper(".mySwiperBlog", {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  },
+});
+
 var swiperProduct = new Swiper(".mySwiperProduct", {
   slidesPerView: "auto",
   spaceBetween: 17,
@@ -230,3 +241,4 @@ var swiperProduct = new Swiper(".mySwiperProduct", {
     },
   },
 });
+

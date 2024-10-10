@@ -631,25 +631,6 @@ pre code {
     }
 }
 
-@media(max-width:900px) {
-    .mySwiperProduct .swiper-slide {
-        max-width: 270px !important;
-    }
-
-    .flex-home-section .swiper .swiper-pagination {
-        margin-left: 0 !important;
-    }
-
-    .product-card {
-        width: 100% !important;
-    }
-
-    .product-image {
-        width: 100%;
-    }
-
-}
-
 @media(min-width:992px) {
 
     .container,
@@ -16589,6 +16570,11 @@ select option:hover {
     padding: 3rem 0;
 }
 
+.blog-container {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
 .swiper-slide-product {
     width: 270px;
     box-shadow: 0px 0px 15px 0px #0000001A;
@@ -16608,7 +16594,8 @@ select option:hover {
 .content-product-card {
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    background-color: white !important;
+    gap: 16.5px;
 }
 
 .product-image {
@@ -16657,9 +16644,36 @@ select option:hover {
     box-shadow: 0px 0px 15px 0px #0000001A;
 }
 
+.mySwiperBlog {
+    max-height: 480px;
+}
+
+.mySwiperBlog .swiper-pagination {
+    margin-left: 0 !important;
+}
+
+.mySwiperBlog .swiper-pagination {
+    position: relative;
+    padding-top: 30px;
+}
+
+.mySwiperBlog .swiper-slide {
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 0px #0000001A;
+    background-color: white !important;
+}
+
+.mySwiperBlog .swiper-pagination {
+    position: absolute;
+}
+
 .swiper .swiper-pagination {
     margin-left: 15rem;
 }
+
+
 
 .swiper-horizontal>.swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -16740,6 +16754,124 @@ select option:hover {
     line-height: 33.6px;
     text-align: left;
     color: #474747;
+}
+
+.banner-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.banner-card {
+    display: flex;
+    width: 370px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border: 1px solid #D2D2D2;
+    border-radius: 20px;
+    padding: 24px 15px;
+}
+
+.header-banner-card {
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 28.8px;
+    text-align: left;
+}
+
+.category-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: left;
+
+}
+
+.header-blog-text {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.6px;
+    text-align: left;
+}
+
+.blog-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+}
+
+.banner-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    max-width: 233px;
+}
+
+.mySwiperBlog .swiper-slide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.blog-card-swiper {
+    width: 100%;
+    max-height: 225px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.youtube-video {
+    border-radius: 15px;
+}
+
+
+.youtube-cover-image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.video-container-text {
+    position: absolute;
+    left: 57%;
+    transform: translateX(-50%);
+    text-align: left;
+    bottom: 6.4rem;
+    width: 100%;
+}
+
+.youtube-link-href {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.youtube-icon {
+    width: 83px;
+    height: 51px;
+}
+
+.video-player-header {
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 21.6px;
+    color: white;
+    margin: 0;
 }
 
 
@@ -17908,5 +18040,43 @@ only screen and (min-device-pixel-ratio:1.5) {
 
     .about-section::before {
         background-image: url(../img/bg-about@2x.jpg);
+    }
+}
+
+@media(max-width:1200px) {
+    .flex-blog {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .banner-card {
+        padding: 24px 6px;
+    }
+}
+
+@media(max-width:900px) {
+    .flex-blog {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mySwiperProduct .swiper-slide {
+        max-width: 270px !important;
+    }
+
+    .flex-home-section .swiper .swiper-pagination {
+        margin-left: 0 !important;
+    }
+
+    .product-card {
+        width: 100% !important;
+    }
+
+    .product-image {
+        width: 100%;
     }
 }
