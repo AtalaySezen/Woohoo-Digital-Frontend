@@ -7985,11 +7985,95 @@ select option:hover {
 }
 
 footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
     border-top: 1px solid #D2D2D2;
     border-bottom: 1px solid #D2D2D2;
     padding: 1.5rem 0;
-
+    margin-top: 6rem;
 }
+
+.footer-text {
+    width: 100%;
+    max-width: 267px;
+}
+
+.font-footer {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+
+.font-bold-footer {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: left;
+}
+
+.footer-root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.footer-link {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+    color: #525252;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: none;
+}
+
+.logo-woohoo-digital-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 1.25rem;
+    padding-bottom: 4.25rem;
+}
+
+.social-media-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.icon-footer-circle {
+    border: 1px solid #525252;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #525252;
+    border-radius: 100%;
+}
+
+.footer-root ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0
+}
+
 
 @media (max-width: 1150px) {
     .flex-home-section .slider-content .content-header {
@@ -8171,5 +8255,13 @@ footer {
 
     .product-image {
         width: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    footer {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 24px;
     }
 }
