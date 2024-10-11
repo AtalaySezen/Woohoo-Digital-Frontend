@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const siteViewport = document.querySelector(".page-wrapper");
+  const bodyWrapper = document.querySelector(".page-wrapper");
   const navigationMenu = document.querySelector(".header .menu-nav");
   const mobileNavigation = createMobileNavigation();
   const touchLinks = getTouchLinks();
@@ -29,9 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   menuToggle.forEach((toggle) => {
-    toggle.addEventListener("click", () =>
-      toggleMobileNavigation(siteViewport)
-    );
+    toggle.addEventListener("click", () => toggleMobileNavigation(bodyWrapper));
   });
 });
 
@@ -171,7 +169,7 @@ function toggleDropdown(dropdown) {
   submenu.style.display = submenu.style.display === "block" ? "none" : "block";
 }
 
-function toggleMobileNavigation(siteViewport) {
+function toggleMobileNavigation(bodyWrapper) {
   const duration = 400;
   if (!document.documentElement.classList.contains("mobile-nav-animation")) {
     if (document.documentElement.classList.contains("mobile-nav-open")) {
@@ -182,7 +180,7 @@ function toggleMobileNavigation(siteViewport) {
           "mobile-animation-ready",
           "mobile-nav-animation"
         );
-        siteViewport.removeAttribute("style");
+        bodyWrapper.removeAttribute("style");
       }, duration);
     } else {
       document.documentElement.classList.add(
