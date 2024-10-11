@@ -23,7 +23,8 @@
                     <nav class="nav-links">
                         <ul>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="menu">Kurumsal</a>
+                                <a class="langchange" data-key="corporate" aria-expanded="false"
+                                    role="menu">Kurumsal</a>
                                 <ul>
                                     <li>
                                         <a href="#">Nuh Hakkında</a>
@@ -49,7 +50,8 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="menu">Ürünlerimiz</a>
+                                <a class="langchange" data-key="ourProducts" aria-expanded="false"
+                                    role="menu">Ürünlerimiz</a>
                                 <ul>
                                     <li>
                                         <a href="#">Klasik</a>
@@ -87,7 +89,8 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="menu">Makarna & Sağlık</a>
+                                <a aria-expanded="false" class="langchange" data-key="pastaHealth" role="menu">Makarna &
+                                    Sağlık</a>
                                 <ul>
                                     <li>
                                         <a href="#">Makarna Şişmanlatmaz</a>
@@ -118,7 +121,8 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="menu">Sosyal Medya</a>
+                                <a aria-expanded="false" class="langchange" data-key="socialMedia" role="menu">Sosyal
+                                    Medya</a>
                                 <ul>
                                     <li>
                                         <a href="#">Instagram</a>
@@ -129,7 +133,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="menu">İhracat</a>
+                                <a aria-expanded="false" class="langchange" data-key="export" role="menu">İhracat</a>
                                 <ul>
                                     <li>
                                         <a href="#">İhracat</a>
@@ -140,7 +144,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a aria-expanded="false" role="menu">İletişim</a>
+                                <a aria-expanded="false" class="langchange" data-key="contact" role="menu">İletişim</a>
                                 <ul>
                                     <li>
                                         <a href="#">İletişim Bilgileri</a>
@@ -154,15 +158,15 @@
                     </nav>
                     <div class="languagesSelect">
                         <ul>
-                            <li><a href="/" class="active">tr</a></li>
-                            <li><a href="/en-us" class="">en</a></li>
-                            <li><a href="/zh-cn" class="">zh</a></li>
+                            <li><a onclick="changeLang('tr')" class="active">tr</a></li>
+                            <li><a onclick="changeLang('en')">en</a></li>
+                            <li><a onclick="changeLang('zh')">zh</a></li>
                         </ul>
                         <div class="select-box">
-                            <label><span>TR</span></label>
-                            <select>
-                                <option value="tr" data-short="TR" selected>Türkçe</option>
-                                <option value="tr" data-short="EN">English</option>
+                            <label><span id="selectedLanguageSpan">TR</span></label>
+                            <select id="language-select" onchange="changeLang(this.value)">
+                                <option value="tr" data-short="TR">Türkçe</option>
+                                <option value="en" data-short="EN">English</option>
                                 <option value="zh" data-short="ZH">中国人</option>
                             </select>
                         </div>
